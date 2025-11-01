@@ -4,400 +4,415 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mouad Matioui — Cybersecurity Portfolio</title>
-  <meta name="description" content="Mouad Matioui — Cybersecurity student. Projects: Phishing detection using ML/AI; comparative VPN analysis."/>
-  <style>
-    /* ---------- Variables ---------- */
-    :root{
-      --bg-dark: #03120a;        /* deep dark green base */
-      --panel-dark: #072014;
-      --muted-dark: #9fbfa8;
-      --text-dark: #e6f7ee;
-      --accent-dark: #48d08a;   /* neon green accent */
-
-      --bg-light: #fbfdfb;
-      --panel-light: #ffffff;
-      --muted-light: #3f6b55;
-      --text-light: #072014;
-      --accent-light: #0b8a5e;   /* emerald accent */
-
-      --radius: 14px;
-      --maxw: 1100px;
-      --glass: rgba(255,255,255,0.03);
-      --transition: 260ms cubic-bezier(.2,.9,.2,1);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-
-    /* Default theme = dark */
-    html { background: var(--bg-dark); color: var(--text-dark); }
-    body { margin:0; padding:32px; display:flex; justify-content:center; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-
-    /* Light theme toggled by .light on <html> */
-    html.light { background: var(--bg-light); color: var(--text-light); }
-
-    /* Panels adjust with theme */
-    .page { width:100%; max-width:var(--maxw); }
-
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius: var(--radius);
-      padding:22px;
-      border:1px solid rgba(255,255,255,0.04);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.55);
-      transition: all var(--transition);
-    }
-    /* Light mode overrides */
-    html.light .panel {
-      background: var(--panel-light);
-      border: 1px solid rgba(6,20,14,0.06);
-      box-shadow: 0 8px 30px rgba(8,18,12,0.04);
-    }
-
-    /* Header */
-    header.site {
-      display:flex; align-items:center; gap:12px; margin-bottom:18px;
-    }
-    .brand { display:flex; align-items:center; gap:12px; }
-    .logo {
-      width:56px; height:56px; border-radius:12px;
-      display:flex; align-items:center; justify-content:center; font-weight:800;
-      background: linear-gradient(135deg, var(--accent-dark), #2fd08b);
-      color:#022;
-    }
-    html.light .logo { background: linear-gradient(135deg, var(--accent-light), #2ea275); color:#fff; }
-
-    .site-controls { margin-left:auto; display:flex; gap:10px; align-items:center; }
-
-    .theme-btn {
-      background:transparent; border:1px solid rgba(255,255,255,0.06); padding:8px 10px; border-radius:10px; cursor:pointer; color:inherit;
-      transition:all var(--transition);
-    }
-    html.light .theme-btn { border-color: rgba(0,0,0,0.06); }
-
-    /* Intro grid */
-    .intro { display:grid; grid-template-columns:1fr 340px; gap:28px; align-items:center; }
-    @media (max-width:980px){ .intro { grid-template-columns:1fr; } .photo-col { order:-1; } }
-
-    /* Left column content */
-    .intro-left { padding:6px 0; }
-    .greet { color: var(--accent-dark); font-weight:700; margin:0 0 6px 0; }
-    html.light .greet { color: var(--accent-light); }
-    h1.title { margin:0 0 8px 0; font-size:36px; line-height:1.05; }
-    p.lead { margin:0; color: rgba(230,247,238,0.9); max-width:70ch; }
-    html.light p.lead { color: #123826; }
-
-    /* Buttons & links */
-    .controls { display:flex; gap:12px; margin-top:18px; align-items:center; flex-wrap:wrap; }
-    .btn { padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; display:inline-flex; gap:10px; align-items:center; cursor:pointer; border:0; }
-    .btn-cv { background: linear-gradient(90deg, var(--accent-dark), #2fd08b); color:#082; }
-    html.light .btn-cv { background: linear-gradient(90deg, var(--accent-light), #2ea275); color:#fff; }
-    .btn-ep { border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--accent-dark); }
-    html.light .btn-ep { border:1px solid rgba(0,0,0,0.06); color:var(--accent-light); }
-
-    .linkedin {
-      display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; text-decoration:none;
-      border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--accent-dark); font-weight:700;
-    }
-    html.light .linkedin { color:var(--accent-light); border-color: rgba(0,0,0,0.06); }
-
-    /* Right column photo */
-    .photo-col { display:flex; justify-content:center; align-items:center; }
-    .photo {
-      width:340px; height:340px; border-radius:18px; overflow:hidden; display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(255,255,255,0.04); background: linear-gradient(135deg, rgba(0,0,0,0.12), rgba(255,255,255,0.02));
-      box-shadow: 0 30px 70px rgba(2,6,23,0.6);
-    }
-    .photo img { width:100%; height:100%; object-fit:cover; display:block; }
-
-    html.light .photo { box-shadow: 0 12px 30px rgba(8,18,12,0.04); border:1px solid rgba(6,20,14,0.04); }
-
-    /* Animated arrow */
-    .arrow-wrap { text-align:center; margin-top:18px; }
-    .down-arrow {
-      width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:999px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04);
-      cursor:pointer; animation: float 2.4s ease-in-out infinite;
-    }
-    @keyframes float { 0%{ transform:translateY(0) } 50%{ transform:translateY(8px) } 100%{ transform:translateY(0) } }
-    html.light .down-arrow { border-color: rgba(0,0,0,0.06); }
-
-    /* Navigation header after arrow target */
-    .nav-header { display:flex; gap:12px; justify-content:center; margin-top:18px; margin-bottom:8px; }
-    .nav-btn { padding:8px 14px; border-radius:999px; text-decoration:none; font-weight:700; color:var(--muted-dark); border:1px solid rgba(255,255,255,0.02); background:transparent; }
-    html.light .nav-btn { color:var(--muted-light); border:1px solid rgba(0,0,0,0.04); }
-
-    /* Main content layout */
-    main.content { display:grid; grid-template-columns:1fr 320px; gap:28px; margin-top:12px; }
-    @media (max-width:980px){ main.content { grid-template-columns:1fr; } }
-
-    section.card { padding:20px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); }
-    html.light section.card { background: var(--panel-light); border:1px solid rgba(0,0,0,0.04); }
-
-    section.card h3 { margin:0 0 10px 0; }
-    .muted { color: rgba(230,247,238,0.8); }
-    html.light .muted { color: var(--muted-light); }
-
-    .item { padding:12px 0; border-top:1px dashed rgba(255,255,255,0.03); }
-    .item:first-child { border-top:0; }
-
-    .skill-tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-    .tag { padding:8px 10px; border-radius:999px; border:1px solid rgba(255,255,255,0.04); background:transparent; font-weight:700; }
-    html.light .tag { border:1px solid rgba(0,0,0,0.04); }
-
-    /* contact form */
-    .contact-form { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
-    .field { display:flex; flex-direction:column; gap:6px; }
-    input[type="text"], input[type="email"], textarea {
-      padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background: rgba(0,0,0,0.06); color:inherit;
-      transition: border-color var(--transition), background var(--transition);
-    }
-    html.light input, html.light textarea { border:1px solid rgba(0,0,0,0.08); background: #fbfdfb; color:var(--text-light); }
-    textarea { min-height:110px; resize:vertical; }
-    .submit { display:inline-block; padding:10px 12px; border-radius:10px; border:0; font-weight:800; cursor:pointer; background: linear-gradient(90deg, var(--accent-dark), #2fd08b); color:#062; }
-    html.light .submit { background: linear-gradient(90deg, var(--accent-light), #2ea275); color:#fff; }
-
-    footer { text-align:center; margin-top:28px; color:rgba(230,247,238,0.6); font-size:14px; }
-    html.light footer { color:#556b5c; }
-
-    /* small responsive tweaks */
-    @media (max-width:520px){
-      .logo { width:44px; height:44px; font-size:14px; }
-      h1.title { font-size:28px; }
-      .photo { width:260px; height:260px; }
-    }
-  </style>
+  <meta name="description" content="Mouad Matioui — Cybersecurity student. Projects: Phishing detection using ML/AI; comparative VPN analysis. Teaching Assistant experience." />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
-    <!-- Header -->
-    <header class="site">
+  <!-- MAIN WRAPPER -->
+  <div id="app">
+    <!-- NAV / TOPBAR -->
+    <header class="topbar" id="topbar" role="banner">
       <div class="brand">
-        <div class="logo" aria-hidden>MM</div>
-        <div>
-          <div style="font-size:12px; color:rgba(230,247,238,0.8)">Portfolio</div>
-          <div style="font-weight:800">Mouad Matioui</div>
+        <div class="logo">MM</div>
+        <div class="brand-text">
+          <div class="muted small">Portfolio</div>
+          <div class="name">Mouad Matioui</div>
         </div>
       </div>
 
-      <div class="site-controls">
-        <button id="themeToggle" class="theme-btn" aria-pressed="false" title="Toggle theme">🌙 Dark</button>
-      </div>
+      <nav class="top-actions" aria-label="Primary">
+        <button id="themeToggle" class="btn-ghost" aria-pressed="false" title="Toggle theme">🌗</button>
+        <a id="downloadCV-top" class="btn-primary" href="#" download>Download CV</a>
+        <a id="downloadEP-top" class="btn-outline" href="#" download>Download EP</a>
+        <!-- small circular photo top-right -->
+        <div class="small-photo" aria-hidden>
+          <img id="smallPhoto" alt="profile" src="PROFILE_IMG">
+        </div>
+      </nav>
     </header>
 
-    <!-- Landing / Intro -->
-    <section class="intro panel">
-      <div class="intro-left">
-        <p class="greet">Hi,</p>
-        <h1 class="title">I’m Mouad Matioui</h1>
-        <p class="lead">Cybersecurity student at the University of Hertfordshire. My work focuses on offensive security, machine learning for phishing detection, and rigorous performance & security analysis.</p>
+    <!-- HERO / FULLSCREEN -->
+    <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="eyebrow">Hi,</p>
+          <h1 id="hero-title" class="hero-title">I’m <span class="highlight">Mouad Matioui</span></h1>
+          <p class="hero-sub">Cybersecurity student at the University of Hertfordshire — focused on offensive security, machine learning for phishing detection, and reproducible security research.</p>
 
-        <div class="controls" aria-hidden>
-          <!-- LinkedIn icon (replace href with your profile) -->
-          <a class="linkedin" href="https://www.linkedin.com/in/mouad-matioui/" target="_blank" rel="noopener" title="LinkedIn (opens in new tab)">
-            <!-- simple svg LinkedIn glyph for clarity -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M4.98 3.5C4.98 4.6 4.15 5.45 3.06 5.45 1.97 5.45 1.14 4.6 1.14 3.5 1.14 2.4 1.97 1.55 3.06 1.55 4.15 1.55 4.98 2.4 4.98 3.5z" fill="currentColor"/>
-              <path d="M.5 8.99h5v14h-5v-14zM9.5 8.99h4.8v2h.07c.67-1.2 2.32-2.46 4.78-2.46 5.12 0 6.07 3.37 6.07 7.75v6.71h-5v-5.94c0-1.42 0-3.25-1.99-3.25-1.99 0-2.3 1.56-2.3 3.13v6.06h-5v-14z" fill="currentColor"/>
-            </svg>
-          </a>
+          <div class="hero-cta">
+            <a class="btn-primary" id="downloadCV-hero" href="#" download>Download CV</a>
+            <a class="btn-outline" id="downloadEP-hero" href="#" download>Download EP</a>
+            <a class="social-link" href="https://www.linkedin.com/in/mouad-matioui/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <!-- LinkedIn icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M4.98 3.5C4.98 4.6 4.15 5.45 3.06 5.45 1.97 5.45 1.14 4.6 1.14 3.5 1.14 2.4 1.97 1.55 3.06 1.55 4.15 1.55 4.98 2.4 4.98 3.5z" fill="currentColor"/>
+                <path d="M.5 8.99h5v14h-5v-14zM9.5 8.99h4.8v2h.07c.67-1.2 2.32-2.46 4.78-2.46 5.12 0 6.07 3.37 6.07 7.75v6.71h-5v-5.94c0-1.42 0-3.25-1.99-3.25-1.99 0-2.3 1.56-2.3 3.13v6.06h-5v-14z" fill="currentColor"/>
+              </svg>
+            </a>
+          </div>
 
-          <!-- Download CV: edit CV_PATH before deploying -->
-          <a id="btnCV" class="btn btn-cv" href="#" download title="Download CV">Download CV</a>
-
-          <!-- Download EP -->
-          <a id="btnEP" class="btn btn-ep" href="#" download title="Download EP">Download EP</a>
+          <div class="hero-footnote muted">Targeting advanced study in Cybersecurity and Assurance (CYBERSURE) — research & applied skills emphasised.</div>
         </div>
 
-        <div class="arrow-wrap">
-          <div id="scrollArrow" class="down-arrow" role="button" aria-label="Scroll to navigation">
-            <!-- down chevron -->
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="hero-right">
+          <div class="hero-photo" aria-hidden>
+            <img id="profileImg" src="PROFILE_IMG" alt="Mouad Matioui photo">
           </div>
         </div>
       </div>
 
-      <!-- Right: photo -->
-      <div class="photo-col">
-        <div class="photo" aria-hidden>
-          <!-- Replace PROFILE_IMG with your file path, e.g. /profile.jpg -->
-          <img id="profileImg" src="PROFILE_IMG" alt="Mouad Matioui photo" />
-        </div>
+      <div class="hero-arrow-wrap" role="button" aria-label="Scroll to navigation" id="scrollArrow">
+        <svg class="hero-arrow" width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
       </div>
     </section>
 
-    <!-- Navigation header anchor -->
-    <div id="navAnchor"></div>
-    <div class="nav-header" style="margin-top:20px">
-      <a class="nav-btn" href="#education">🎓 Education</a>
-      <a class="nav-btn" href="#projects">💻 Projects</a>
-      <a class="nav-btn" href="#contact">✉️ Contact</a>
+    <!-- NAV HEADER (anchor target) -->
+    <div id="navHeader" class="nav-header" role="navigation" aria-label="Sections">
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </div>
 
-    <!-- Main Content -->
-    <main class="content">
-      <div>
-        <!-- Education -->
-        <section id="education" class="card">
-          <h3>Education</h3>
-          <div class="item">
-            <div style="font-weight:800">University of Hertfordshire — BSc (Hons) Computer Science</div>
-            <div class="muted">Sep 2022 — Jun 2026 (First Class expected) — Specialising in Cybersecurity & Networks</div>
-          </div>
+    <!-- MAIN CONTENT GRID -->
+    <main class="main-grid">
+      <!-- LEFT COLUMN: content sections -->
+      <div class="content-column">
 
-          <div class="item">
-            <div style="font-weight:800">French Baccalaureate — Morocco</div>
-            <div class="muted">Sep 2018 — Jun 2021 — Math & Economics — 70%</div>
-          </div>
+        <!-- EDUCATION -->
+        <section id="education" class="section card" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
 
-          <div class="item">
-            <div style="font-weight:800">Teaching Assistant — Silicon to C & Computational Problem Solving (HIC)</div>
-            <div class="muted">Scored 95/100 (GPA 4.5) in both modules and achieved the highest grade across the full year.</div>
+          <div class="cards-grid">
+            <article class="card-sm">
+              <h3>University of Hertfordshire</h3>
+              <p class="muted">BSc (Hons) Computer Science — Cybersecurity & Networks</p>
+              <p class="muted small">Sep 2022 — Jun 2026 (First Class expected)</p>
+              <ul class="bullet">
+                <li>Relevant modules: Network Security, Cryptography, System Administration, Software Engineering</li>
+                <li>Final-year thesis / research planned on ML for phishing detection and secure network design</li>
+              </ul>
+            </article>
+
+            <article class="card-sm">
+              <h3>French Baccalaureate</h3>
+              <p class="muted">Math & Economics — Morocco</p>
+              <p class="muted small">Sep 2018 — Jun 2021 — 70%</p>
+            </article>
+
+            <article class="card-sm highlight">
+              <h3>Teaching Assistant — Silicon to C & Computational Problem Solving (HIC)</h3>
+              <p class="muted">Assisted labs, graded assignments and held office hours.</p>
+              <p class="muted small">Scored 95/100 (GPA 4.5) in both modules — highest grade in the year.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section card" aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="when">Sep 2025 — Present</div>
+              <div class="role">AI Junior Solutions Analyst (Part-time) — Immunocore (Remote)</div>
+              <div class="muted">
+                Collaborated with data scientists and IT engineers to train and fine-tune internal AI models, improving predictive accuracy by >30%.
+                Documented model behaviour for transparency, reproducibility and audit readiness. Presented results to stakeholders to inform product decisions.
+              </div>
+              <div class="tech">Tech: Python • PyTorch • scikit-learn • Azure • REST APIs</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="when">Sep 2024 — Sep 2025</div>
+              <div class="role">Technology Placement Student — Immunocore (Oxford)</div>
+              <div class="muted">
+                Rotated across Cybersecurity, Infrastructure, Compliance and Project Management teams.
+                Supported Active Directory and endpoint monitoring for 700+ employees. Developed automation scripts to streamline onboarding and reporting.
+              </div>
+              <div class="tech">Tech: PowerShell • Microsoft Graph API • Windows Server • SIEM basics • Azure</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="when">Dec 2022 — Aug 2024</div>
+              <div class="role">Customer Assistant — Tesco (Hatfield)</div>
+              <div class="muted">Customer-facing role building communication, teamwork and high reliability under shift pressure.</div>
+              <div class="tech">Skills: teamwork, communication, task prioritisation</div>
+            </div>
           </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="card" style="margin-top:18px">
-          <h3>Projects</h3>
+        <!-- PROJECTS -->
+        <section id="projects" class="section card" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
 
-          <div class="item">
-            <div style="font-weight:800">Phishing Email Detection (Machine Learning & AI)</div>
-            <div class="muted">Ongoing research and implementation using NLP feature engineering, transformer-based models and classical classifiers. Work includes dataset curation, evaluation (accuracy / F1 / AUC) and prototyping real-time deployment strategies. Tech: Python, scikit-learn, PyTorch, Hugging Face, spaCy.</div>
-          </div>
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div class="project-head">
+                <h3>Phishing Email Detection — ML & AI</h3>
+                <div class="muted small">Ongoing / Research & Prototype</div>
+              </div>
 
-          <div class="item">
-            <div style="font-weight:800">Comparative Analysis Paper — WireGuard vs OpenVPN</div>
-            <div class="muted">Reproducible evaluation of performance (latency, throughput), resource utilisation and security behaviour under simulated attacks. Publication target: <strong>May 26, 2026</strong>.</div>
-          </div>
+              <p>
+                End-to-end pipeline for detecting phishing emails combining classical NLP features and transformer models for contextual understanding.
+                Focus areas:
+              </p>
+              <ul class="bullet">
+                <li>Dataset curation and labelling (public datasets + synthetic augmentation).</li>
+                <li>Feature engineering: headers, URL analysis, lexical & embedding-based features.</li>
+                <li>Model experiments: logistic regression, random forest, transformer fine-tuning (DistilBERT), ensemble stacking.</li>
+                <li>Evaluation: accuracy, precision/recall, F1, ROC-AUC and operational thresholds for low false-positive rates.</li>
+                <li>Deployment experiments: Flask prototype for online inference; evaluating latency & throughput under batch and streaming modes.</li>
+              </ul>
 
-          <div class="item">
-            <div style="font-weight:800">Synthetic Data Dashboards</div>
-            <div class="muted">Generated dummy datasets and built interactive dashboards to highlight KPIs and data stories using Plotly Dash for visualization and demonstration.</div>
+              <div class="project-footer">
+                <div class="tech">Tech: Python • scikit-learn • PyTorch • Hugging Face • spaCy • Flask • Docker</div>
+                <div class="links">
+                  <!-- optional repo or demo link placeholders -->
+                  <a class="link" href="#" target="_blank" rel="noopener" aria-label="Phishing GitHub">Repo</a>
+                  <a class="link" href="#" target="_blank" rel="noopener" aria-label="Phishing Demo">Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div class="project-head">
+                <h3>Comparative Analysis Paper — WireGuard vs OpenVPN</h3>
+                <div class="muted small">Publication target: <strong>May 26, 2026</strong></div>
+              </div>
+
+              <p>
+                A reproducible, empirical study comparing WireGuard and OpenVPN across performance, security resilience and resource utilisation.
+                The study simulates realistic university network loads and attack scenarios:
+              </p>
+              <ul class="bullet">
+                <li>Latency and throughput benchmarks under increasing concurrent clients.</li>
+                <li>1GB SFTP transfer tests to measure sustained throughput & CPU utilisation.</li>
+                <li>Simulated attacks: DDoS stress tests, DNS leakage checks, and failure/reconnect behaviour.</li>
+                <li>Security analysis: protocol design, cryptographic primitives, and attack surface comparison.</li>
+                <li>Recommendations for university-scale VPN deployments and configuration best practices.</li>
+              </ul>
+
+              <div class="project-footer">
+                <div class="tech">Tech: Linux • WireGuard • OpenVPN • GNS3 • iperf3 • Wireshark • Bash • Python</div>
+                <div class="links">
+                  <a class="link" href="#" target="_blank" rel="noopener" aria-label="Paper draft">Paper draft</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div class="project-head">
+                <h3>Synthetic Data Dashboards</h3>
+                <div class="muted small">Demo / University</div>
+              </div>
+
+              <p>
+                Created interactive dashboards to mimic enterprise KPI flows and business dashboards for visual storytelling.
+                Generated synthetic datasets with realistic distributions to test dashboard behaviours and interactions.
+              </p>
+
+              <ul class="bullet">
+                <li>Plotly Dash interactive charts and controls.</li>
+                <li>Exportable HTML dashboard pages for stakeholders.</li>
+                <li>Automation scripts to generate repeatable demo datasets (pandas / numpy).</li>
+              </ul>
+
+              <div class="project-footer">
+                <div class="tech">Tech: Python • pandas • numpy • Plotly Dash • HTML/CSS</div>
+                <div class="links">
+                  <a class="link" href="#" target="_blank" rel="noopener">Dashboard demo</a>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
+
       </div>
 
-      <!-- Sidebar -->
-      <aside>
-        <section class="card">
-          <h3>Skills</h3>
-          <div class="skill-tags" style="margin-top:10px">
-            <div class="tag">Python</div>
-            <div class="tag">PowerShell</div>
-            <div class="tag">Machine Learning</div>
-            <div class="tag">NLP</div>
-            <div class="tag">Networking</div>
-            <div class="tag">Azure</div>
-            <div class="tag">Cybersecurity</div>
+      <!-- RIGHT COLUMN: sidebar -->
+      <aside class="sidebar">
+        <div class="card profile-card">
+          <div class="photo-wrapper small">
+            <img src="PROFILE_IMG" alt="Mouad profile">
           </div>
-        </section>
+          <h3>Mouad Matioui</h3>
+          <p class="muted small">BSc (Hons) Computer Science — Cybersecurity & Networks</p>
 
-        <section class="card" style="margin-top:18px">
-          <h3>Contact</h3>
-          <div style="margin-top:10px; color:inherit">
-            <div style="margin-bottom:8px"><strong>Email</strong>: <a href="mailto:matiouimouad9@gmail.com">matiouimouad9@gmail.com</a></div>
-            <div style="margin-bottom:8px"><strong>Phone</strong>: <a href="tel:+447831517944">+44 7831 517944</a></div>
-
-            <!-- Small form that opens mail client -->
-            <form id="contactForm" class="contact-form" onsubmit="return handleContact(event)">
-              <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
-              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
-              <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Hi Mouad — I'm reaching out about..." required></textarea></div>
-              <button type="submit" class="submit">Send Message</button>
-            </form>
+          <div class="contact-block">
+            <div><strong>Email</strong><br><a href="mailto:matiouimouad9@gmail.com">matiouimouad9@gmail.com</a></div>
+            <div style="margin-top:8px"><strong>Phone</strong><br><a href="tel:+447831517944">+44 7831 517944</a></div>
+            <div style="margin-top:8px"><strong>Location</strong><br>Hatfield, UK</div>
           </div>
-        </section>
 
-        <section class="card" style="margin-top:18px">
-          <h3>Languages</h3>
-          <div style="margin-top:8px" class="muted">English (Fluent), French (Fluent), Arabic (Fluent)</div>
-        </section>
+          <div class="skill-list">
+            <h4>Skills</h4>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">PowerShell</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Networking</span>
+              <span class="tag">Azure</span>
+              <span class="tag">Automation</span>
+            </div>
+          </div>
+
+          <div class="download-links" style="margin-top:12px">
+            <a id="btnCV-side" class="btn-primary block" href="#" download>Download CV</a>
+            <a id="btnEP-side" class="btn-outline block" href="#" download>Download EP</a>
+          </div>
+
+          <div class="socials" style="margin-top:12px">
+            <a class="link" href="https://www.linkedin.com/in/mouad-matioui/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h4>Languages</h4>
+          <p class="muted small">English (Fluent) • French (Fluent) • Arabic (Fluent)</p>
+        </div>
       </aside>
     </main>
 
-    <footer>
-      <div style="padding:18px 0; color:rgba(230,247,238,0.6)">© 2025 Mouad Matioui</div>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-card" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <div>
+          <h2 id="contact-title">Contact</h2>
+          <p class="muted">Send a message or request further materials (papers, demos). The form below opens your email client and pre-fills the message.</p>
+        </div>
+
+        <form id="contactFormLarge" class="contact-form-large" onsubmit="return handleContactLarge(event)" aria-label="Contact form">
+          <div class="row">
+            <input id="cname" name="name" type="text" placeholder="Your full name" required>
+            <input id="cemail" name="email" type="email" placeholder="your@domain.com" required>
+          </div>
+          <textarea id="cmessage" name="message" placeholder="Hi Mouad — I'm getting in touch about..." required></textarea>
+          <div style="display:flex; gap:12px; align-items:center; margin-top:8px;">
+            <button type="submit" class="btn-primary">Send Message</button>
+            <div class="muted small">Or email directly: <a href="mailto:matiouimouad9@gmail.com">matiouimouad9@gmail.com</a></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div>© 2025 Mouad Matioui — Built for scholarship & research applications</div>
     </footer>
   </div>
 
+  <!-- SCRIPTS -->
   <script>
-    // ---------- Theme handling ----------
-    const html = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
-
-    // default = dark; if user preference saved, use it
-    (function initTheme(){
+    /* ===========================
+       Theme handling
+       =========================== */
+    (function(){
+      const html = document.documentElement;
+      const btn = document.getElementById('themeToggle');
       const saved = localStorage.getItem('mm_theme');
-      if(saved === 'light') {
-        html.classList.add('light');
-        themeToggle.textContent = '☀️ Light';
-        themeToggle.setAttribute('aria-pressed','true');
-      } else {
-        html.classList.remove('light');
-        themeToggle.textContent = '🌙 Dark';
-        themeToggle.setAttribute('aria-pressed','false');
+      function setTheme(name){
+        if(name === 'light') html.classList.add('light');
+        else html.classList.remove('light');
+        localStorage.setItem('mm_theme', name);
+        btn.setAttribute('aria-pressed', name==='light');
       }
+
+      if(saved) setTheme(saved);
+      else {
+        // default: dark
+        setTheme('dark');
+      }
+
+      btn.addEventListener('click', () => {
+        const active = html.classList.contains('light') ? 'light' : 'dark';
+        setTheme(active === 'light' ? 'dark' : 'light');
+      });
     })();
 
-    themeToggle.addEventListener('click', () => {
-      if(html.classList.contains('light')){
-        html.classList.remove('light');
-        localStorage.setItem('mm_theme','dark');
-        themeToggle.textContent = '🌙 Dark';
-        themeToggle.setAttribute('aria-pressed','false');
-      } else {
-        html.classList.add('light');
-        localStorage.setItem('mm_theme','light');
-        themeToggle.textContent = '☀️ Light';
-        themeToggle.setAttribute('aria-pressed','true');
-      }
-    });
+    /* ===========================
+       Scroll arrow -> navHeader
+       =========================== */
+    (function() {
+      const arrow = document.getElementById('scrollArrow');
+      const nav = document.getElementById('navHeader');
+      arrow.addEventListener('click', ()=> {
+        nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    })();
 
-    // ---------- Scroll arrow ----------
-    const scrollArrow = document.getElementById('scrollArrow');
-    const navAnchor = document.getElementById('navAnchor');
-    scrollArrow.addEventListener('click', () => {
-      navAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-
-    // ---------- Internal nav smooth scroll ----------
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const href = this.getAttribute('href');
-        if(href.length > 1) {
+    /* ===========================
+       Smooth scroll for anchors
+       =========================== */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if(href.length > 1){
           e.preventDefault();
           const target = document.querySelector(href);
-          if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+          if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
 
-    // ---------- CV / EP download placeholders ----------
-    // Update these to the correct paths on your GitHub Pages before publishing:
-    const CV_PATH = '/mouad_cv.pdf';   // <-- change this
-    const EP_PATH = '/mouad_ep.pdf';   // <-- change this
-    document.getElementById('btnCV').href = CV_PATH;
-    document.getElementById('btnEP').href = EP_PATH;
+    /* ===========================
+       CV / EP download placeholders
+       Update paths before publishing:
+       CV_PATH and EP_PATH must be changed to your GitHub Pages file paths
+       =========================== */
+    (function(){
+      const CV_PATH = '/mouad_cv.pdf';  // <-- edit
+      const EP_PATH = '/mouad_ep.pdf';  // <-- edit
+      const ids = ['downloadCV-top','downloadCV-hero','btnCV','btnCV-side','downloadCV-hero','downloadCV-top','downloadCV-hero'];
+      // set known buttons if they exist
+      const map = {
+        'downloadCV-top': document.getElementById('downloadCV-top'),
+        'downloadCV-hero': document.getElementById('downloadCV-hero'),
+        'btnCV': document.getElementById('btnCV-side'),
+        'btnCV-side': document.getElementById('btnCV-side'),
+        'downloadEP-hero': document.getElementById('downloadEP-hero'),
+        'btnEP-side': document.getElementById('btnEP-side'),
+        'btnEP': document.getElementById('btnEP-side'),
+      };
+      // safely set if element present
+      if(map['downloadCV-top']) map['downloadCV-top'].href = CV_PATH;
+      if(map['downloadCV-hero']) map['downloadCV-hero'].href = CV_PATH;
+      if(map['btnCV-side']) map['btnCV-side'].href = CV_PATH;
+      if(document.getElementById('downloadEP-hero')) document.getElementById('downloadEP-hero').href = EP_PATH;
+      if(document.getElementById('btnEP-side')) document.getElementById('btnEP-side').href = EP_PATH;
+      if(document.getElementById('btnEP')) document.getElementById('btnEP').href = EP_PATH;
+    })();
 
-    // ---------- Profile image placeholder ----------
-    // Replace the 'PROFILE_IMG' src with the uploaded image path on your site, e.g. '/profile.jpg'.
-    const profile = document.getElementById('profileImg');
-    if(profile && profile.src.includes('PROFILE_IMG')) {
-      // show subtle placeholder styling if not replaced
-      profile.style.objectFit = 'cover';
-    }
-
-    // ---------- Contact form handler (opens mail client) ----------
-    function handleContact(e){
+    /* ===========================
+       Contact form handlers
+       - open default mail client with prefilled content
+       =========================== */
+    function handleContactLarge(e){
       e.preventDefault();
-      const name = encodeURIComponent(document.getElementById('name').value.trim());
-      const email = encodeURIComponent(document.getElementById('email').value.trim());
-      const message = encodeURIComponent(document.getElementById('message').value.trim());
-      const subject = encodeURIComponent('Website contact from ' + name);
-      // Pre-fill email body with details
-      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}%0D%0AEmail: ${decodeURIComponent(email)}%0D%0A%0D%0A${decodeURIComponent(message)}`);
-      // opens default mail client
+      const name = encodeURIComponent(document.getElementById('cname').value.trim());
+      const email = encodeURIComponent(document.getElementById('cemail').value.trim());
+      const message = encodeURIComponent(document.getElementById('cmessage').value.trim());
+      const subject = encodeURIComponent(`Website contact from ${decodeURIComponent(name)}`);
+      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\n${decodeURIComponent(message)}`);
       window.location.href = `mailto:matiouimouad9@gmail.com?subject=${subject}&body=${body}`;
       return false;
     }
+
+    /* Simple reveal on scroll (very lightweight) */
+    (function(){
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) entry.target.classList.add('inview');
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.card, .project-card, .timeline-item, .card-sm').forEach(el => observer.observe(el));
+    })();
   </script>
 </body>
 </html>
