@@ -4,13 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mouad Matioui — Cybersecurity Portfolio</title>
-  <meta name="description" content="Mouad Matioui — Cybersecurity student. Projects: Phishing detection using ML/AI; comparative VPN analysis. Teaching Assistant experience." />
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Mouad Matioui — Cybersecurity student. Projects and research: phishing detection, VPN comparative analysis." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- MAIN WRAPPER -->
   <div id="app">
-    <!-- NAV / TOPBAR -->
     <header class="topbar" id="topbar" role="banner">
       <div class="brand">
         <div class="logo">MM</div>
@@ -22,53 +20,44 @@
 
       <nav class="top-actions" aria-label="Primary">
         <button id="themeToggle" class="btn-ghost" aria-pressed="false" title="Toggle theme">🌗</button>
-        <a id="downloadCV-top" class="btn-primary" href="#" download>Download CV</a>
-        <a id="downloadEP-top" class="btn-outline" href="#" download>Download EP</a>
-        <!-- small circular photo top-right -->
+        <a id="cvTop" class="btn-primary" href="#" download>Download CV</a>
+        <a id="epTop" class="btn-outline" href="#" download>Download EP</a>
         <div class="small-photo" aria-hidden>
-          <img id="smallPhoto" alt="profile" src="PROFILE_IMG">
+          <img id="smallPhoto" alt="profile" src="PROFILE_IMG" />
         </div>
       </nav>
     </header>
 
-    <!-- HERO / FULLSCREEN -->
-    <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
+    <section id="hero" class="hero">
       <div class="hero-inner">
         <div class="hero-left">
           <p class="eyebrow">Hi,</p>
-          <h1 id="hero-title" class="hero-title">I’m <span class="highlight">Mouad Matioui</span></h1>
-          <p class="hero-sub">Cybersecurity student at the University of Hertfordshire — focused on offensive security, machine learning for phishing detection, and reproducible security research.</p>
+          <h1 class="hero-title">I’m <span class="highlight">Mouad Matioui</span></h1>
+          <p class="hero-sub">Cybersecurity student at the University of Hertfordshire focused on offensive security, ML-driven phishing detection and reproducible security research.</p>
 
           <div class="hero-cta">
-            <a class="btn-primary" id="downloadCV-hero" href="#" download>Download CV</a>
-            <a class="btn-outline" id="downloadEP-hero" href="#" download>Download EP</a>
+            <a class="btn-primary" id="cvHero" href="#" download>Download CV</a>
+            <a class="btn-outline" id="epHero" href="#" download>Download EP</a>
             <a class="social-link" href="https://www.linkedin.com/in/mouad-matioui/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <!-- LinkedIn icon -->
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M4.98 3.5C4.98 4.6 4.15 5.45 3.06 5.45 1.97 5.45 1.14 4.6 1.14 3.5 1.14 2.4 1.97 1.55 3.06 1.55 4.15 1.55 4.98 2.4 4.98 3.5z" fill="currentColor"/>
-                <path d="M.5 8.99h5v14h-5v-14zM9.5 8.99h4.8v2h.07c.67-1.2 2.32-2.46 4.78-2.46 5.12 0 6.07 3.37 6.07 7.75v6.71h-5v-5.94c0-1.42 0-3.25-1.99-3.25-1.99 0-2.3 1.56-2.3 3.13v6.06h-5v-14z" fill="currentColor"/>
-              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M4.98 3.5C4.98 4.6 4.15 5.45 3.06 5.45 1.97 5.45 1.14 4.6 1.14 3.5 1.14 2.4 1.97 1.55 3.06 1.55 4.15 1.55 4.98 2.4 4.98 3.5z" fill="currentColor"/><path d="M.5 8.99h5v14h-5v-14zM9.5 8.99h4.8v2h.07c.67-1.2 2.32-2.46 4.78-2.46 5.12 0 6.07 3.37 6.07 7.75v6.71h-5v-5.94c0-1.42 0-3.25-1.99-3.25-1.99 0-2.3 1.56-2.3 3.13v6.06h-5v-14z" fill="currentColor"/></svg>
             </a>
           </div>
 
-          <div class="hero-footnote muted">Targeting advanced study in Cybersecurity and Assurance (CYBERSURE) — research & applied skills emphasised.</div>
+          <div class="hero-footnote muted">Preparing research and materials for CYBERSURE / Erasmus-style scholarship reviewers.</div>
         </div>
 
         <div class="hero-right">
-          <div class="hero-photo" aria-hidden>
-            <img id="profileImg" src="PROFILE_IMG" alt="Mouad Matioui photo">
+          <div class="hero-photo">
+            <img id="profileImg" src="PROFILE_IMG" alt="Mouad Matioui photo" />
           </div>
         </div>
       </div>
 
-      <div class="hero-arrow-wrap" role="button" aria-label="Scroll to navigation" id="scrollArrow">
-        <svg class="hero-arrow" width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
+      <div class="hero-arrow-wrap" id="scrollArrow" role="button" aria-label="Scroll to sections">
+        <svg class="hero-arrow" width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </div>
     </section>
 
-    <!-- NAV HEADER (anchor target) -->
     <div id="navHeader" class="nav-header" role="navigation" aria-label="Sections">
       <a class="nav-link" href="#education">Education</a>
       <a class="nav-link" href="#experience">Experience</a>
@@ -76,24 +65,23 @@
       <a class="nav-link" href="#contact">Contact</a>
     </div>
 
-    <!-- MAIN CONTENT GRID -->
     <main class="main-grid">
-      <!-- LEFT COLUMN: content sections -->
       <div class="content-column">
-
-        <!-- EDUCATION -->
-        <section id="education" class="section card" aria-labelledby="education-title">
-          <h2 id="education-title">Education</h2>
-
+        <section id="education" class="section card box">
+          <div class="box-index">01</div>
+          <h2>Education</h2>
           <div class="cards-grid">
             <article class="card-sm">
               <h3>University of Hertfordshire</h3>
               <p class="muted">BSc (Hons) Computer Science — Cybersecurity & Networks</p>
               <p class="muted small">Sep 2022 — Jun 2026 (First Class expected)</p>
-              <ul class="bullet">
-                <li>Relevant modules: Network Security, Cryptography, System Administration, Software Engineering</li>
-                <li>Final-year thesis / research planned on ML for phishing detection and secure network design</li>
-              </ul>
+              <ul class="bullet"><li>Modules: Network Security, Cryptography, System Administration, Software Engineering</li><li>Thesis: ML for phishing detection and secure network design</li></ul>
+            </article>
+
+            <article class="card-sm highlight">
+              <h3>Teaching Assistant</h3>
+              <p class="muted">Silicon to C & Computational Problem Solving (HIC)</p>
+              <p class="muted small">Scored 95/100 (GPA 4.5) in both modules — highest grade in the year</p>
             </article>
 
             <article class="card-sm">
@@ -101,149 +89,93 @@
               <p class="muted">Math & Economics — Morocco</p>
               <p class="muted small">Sep 2018 — Jun 2021 — 70%</p>
             </article>
-
-            <article class="card-sm highlight">
-              <h3>Teaching Assistant — Silicon to C & Computational Problem Solving (HIC)</h3>
-              <p class="muted">Assisted labs, graded assignments and held office hours.</p>
-              <p class="muted small">Scored 95/100 (GPA 4.5) in both modules — highest grade in the year.</p>
-            </article>
           </div>
         </section>
 
-        <!-- EXPERIENCE -->
-        <section id="experience" class="section card" aria-labelledby="experience-title">
-          <h2 id="experience-title">Experience</h2>
-
+        <section id="experience" class="section card box" data-rotate="-3">
+          <div class="box-index">02</div>
+          <h2>Experience</h2>
           <div class="timeline">
             <div class="timeline-item">
               <div class="when">Sep 2025 — Present</div>
-              <div class="role">AI Junior Solutions Analyst (Part-time) — Immunocore (Remote)</div>
-              <div class="muted">
-                Collaborated with data scientists and IT engineers to train and fine-tune internal AI models, improving predictive accuracy by >30%.
-                Documented model behaviour for transparency, reproducibility and audit readiness. Presented results to stakeholders to inform product decisions.
-              </div>
-              <div class="tech">Tech: Python • PyTorch • scikit-learn • Azure • REST APIs</div>
+              <div class="role">AI Junior Solutions Analyst — Immunocore (Remote)</div>
+              <div class="muted">Collaborated to train and fine-tune AI models, improved predictive accuracy by &gt;30%. Documented and presented model behaviour for transparency and audit readiness.</div>
+              <div class="tech">Python • PyTorch • scikit-learn • Azure • REST APIs</div>
             </div>
 
             <div class="timeline-item">
               <div class="when">Sep 2024 — Sep 2025</div>
               <div class="role">Technology Placement Student — Immunocore (Oxford)</div>
-              <div class="muted">
-                Rotated across Cybersecurity, Infrastructure, Compliance and Project Management teams.
-                Supported Active Directory and endpoint monitoring for 700+ employees. Developed automation scripts to streamline onboarding and reporting.
-              </div>
-              <div class="tech">Tech: PowerShell • Microsoft Graph API • Windows Server • SIEM basics • Azure</div>
+              <div class="muted">Supported Cybersecurity, Infrastructure and Compliance teams. Managed AD and endpoints for 700+ staff. Automated onboarding/reporting with scripts.</div>
+              <div class="tech">PowerShell • Microsoft Graph API • Windows Server • SIEM basics</div>
             </div>
 
             <div class="timeline-item">
               <div class="when">Dec 2022 — Aug 2024</div>
               <div class="role">Customer Assistant — Tesco (Hatfield)</div>
-              <div class="muted">Customer-facing role building communication, teamwork and high reliability under shift pressure.</div>
-              <div class="tech">Skills: teamwork, communication, task prioritisation</div>
+              <div class="muted">Front-line role enhancing teamwork and reliability.</div>
             </div>
           </div>
         </section>
 
-        <!-- PROJECTS -->
-        <section id="projects" class="section card" aria-labelledby="projects-title">
-          <h2 id="projects-title">Projects</h2>
-
+        <section id="projects" class="section card box" data-rotate="3">
+          <div class="box-index">03</div>
+          <h2>Projects</h2>
           <div class="projects-grid">
-            <!-- Project 1 -->
             <article class="project-card">
               <div class="project-head">
                 <h3>Phishing Email Detection — ML & AI</h3>
                 <div class="muted small">Ongoing / Research & Prototype</div>
               </div>
-
-              <p>
-                End-to-end pipeline for detecting phishing emails combining classical NLP features and transformer models for contextual understanding.
-                Focus areas:
-              </p>
+              <p>End-to-end pipeline that combines NLP features and transformer fine-tuning for phishing detection. Work spans dataset curation, model experiments and deployment prototypes.</p>
               <ul class="bullet">
-                <li>Dataset curation and labelling (public datasets + synthetic augmentation).</li>
-                <li>Feature engineering: headers, URL analysis, lexical & embedding-based features.</li>
-                <li>Model experiments: logistic regression, random forest, transformer fine-tuning (DistilBERT), ensemble stacking.</li>
-                <li>Evaluation: accuracy, precision/recall, F1, ROC-AUC and operational thresholds for low false-positive rates.</li>
-                <li>Deployment experiments: Flask prototype for online inference; evaluating latency & throughput under batch and streaming modes.</li>
+                <li>Dataset curation, synthetic augmentation and labelling</li>
+                <li>Feature engineering: headers, URL metadata, lexical & embedding features</li>
+                <li>Models: logistic regression, random forest, DistilBERT fine-tuning, ensemble stacking</li>
+                <li>Evaluation: precision/recall, F1, ROC-AUC, operational threshold tuning</li>
+                <li>Prototype: Flask API, Docker container, latency/throughput analysis</li>
               </ul>
-
-              <div class="project-footer">
-                <div class="tech">Tech: Python • scikit-learn • PyTorch • Hugging Face • spaCy • Flask • Docker</div>
-                <div class="links">
-                  <!-- optional repo or demo link placeholders -->
-                  <a class="link" href="#" target="_blank" rel="noopener" aria-label="Phishing GitHub">Repo</a>
-                  <a class="link" href="#" target="_blank" rel="noopener" aria-label="Phishing Demo">Demo</a>
-                </div>
-              </div>
+              <div class="project-footer"><div class="tech">Python • scikit-learn • PyTorch • Hugging Face • spaCy • Flask • Docker</div></div>
             </article>
 
-            <!-- Project 2 -->
             <article class="project-card">
               <div class="project-head">
-                <h3>Comparative Analysis Paper — WireGuard vs OpenVPN</h3>
+                <h3>Comparative Analysis — WireGuard vs OpenVPN</h3>
                 <div class="muted small">Publication target: <strong>May 26, 2026</strong></div>
               </div>
-
-              <p>
-                A reproducible, empirical study comparing WireGuard and OpenVPN across performance, security resilience and resource utilisation.
-                The study simulates realistic university network loads and attack scenarios:
-              </p>
+              <p>Reproducible evaluation comparing performance and security under simulated university loads and attacks.</p>
               <ul class="bullet">
-                <li>Latency and throughput benchmarks under increasing concurrent clients.</li>
-                <li>1GB SFTP transfer tests to measure sustained throughput & CPU utilisation.</li>
-                <li>Simulated attacks: DDoS stress tests, DNS leakage checks, and failure/reconnect behaviour.</li>
-                <li>Security analysis: protocol design, cryptographic primitives, and attack surface comparison.</li>
-                <li>Recommendations for university-scale VPN deployments and configuration best practices.</li>
+                <li>Latency & throughput benchmarks with increasing clients</li>
+                <li>1GB SFTP transfers to measure sustainable throughput and CPU usage</li>
+                <li>Simulated attacks: DDoS stress tests, DNS leakage checks</li>
+                <li>Security analysis of protocol primitives and configuration recommendations</li>
               </ul>
-
-              <div class="project-footer">
-                <div class="tech">Tech: Linux • WireGuard • OpenVPN • GNS3 • iperf3 • Wireshark • Bash • Python</div>
-                <div class="links">
-                  <a class="link" href="#" target="_blank" rel="noopener" aria-label="Paper draft">Paper draft</a>
-                </div>
-              </div>
+              <div class="project-footer"><div class="tech">Linux • WireGuard • OpenVPN • GNS3 • iperf3 • Wireshark • Bash • Python</div></div>
             </article>
 
-            <!-- Project 3 -->
             <article class="project-card">
               <div class="project-head">
                 <h3>Synthetic Data Dashboards</h3>
                 <div class="muted small">Demo / University</div>
               </div>
-
-              <p>
-                Created interactive dashboards to mimic enterprise KPI flows and business dashboards for visual storytelling.
-                Generated synthetic datasets with realistic distributions to test dashboard behaviours and interactions.
-              </p>
-
+              <p>Interactive dashboards that mimic enterprise KPIs to demonstrate data storytelling and visualisation techniques.</p>
               <ul class="bullet">
-                <li>Plotly Dash interactive charts and controls.</li>
-                <li>Exportable HTML dashboard pages for stakeholders.</li>
-                <li>Automation scripts to generate repeatable demo datasets (pandas / numpy).</li>
+                <li>Plotly Dash interactive controls and exportable HTML dashboards</li>
+                <li>Synthetic dataset generation with pandas and numpy</li>
               </ul>
-
-              <div class="project-footer">
-                <div class="tech">Tech: Python • pandas • numpy • Plotly Dash • HTML/CSS</div>
-                <div class="links">
-                  <a class="link" href="#" target="_blank" rel="noopener">Dashboard demo</a>
-                </div>
-              </div>
+              <div class="project-footer"><div class="tech">Python • pandas • numpy • Plotly Dash</div></div>
             </article>
           </div>
         </section>
-
       </div>
 
-      <!-- RIGHT COLUMN: sidebar -->
       <aside class="sidebar">
         <div class="card profile-card">
           <div class="photo-wrapper small">
-            <img src="PROFILE_IMG" alt="Mouad profile">
+            <img src="PROFILE_IMG" alt="Mouad profile" />
           </div>
           <h3>Mouad Matioui</h3>
           <p class="muted small">BSc (Hons) Computer Science — Cybersecurity & Networks</p>
-
           <div class="contact-block">
             <div><strong>Email</strong><br><a href="mailto:matiouimouad9@gmail.com">matiouimouad9@gmail.com</a></div>
             <div style="margin-top:8px"><strong>Phone</strong><br><a href="tel:+447831517944">+44 7831 517944</a></div>
@@ -252,47 +184,35 @@
 
           <div class="skill-list">
             <h4>Skills</h4>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">PowerShell</span>
-              <span class="tag">Machine Learning</span>
-              <span class="tag">NLP</span>
-              <span class="tag">Networking</span>
-              <span class="tag">Azure</span>
-              <span class="tag">Automation</span>
-            </div>
+            <div class="tags"><span class="tag">Python</span><span class="tag">PowerShell</span><span class="tag">Machine Learning</span><span class="tag">NLP</span><span class="tag">Networking</span><span class="tag">Azure</span></div>
           </div>
 
           <div class="download-links" style="margin-top:12px">
-            <a id="btnCV-side" class="btn-primary block" href="#" download>Download CV</a>
-            <a id="btnEP-side" class="btn-outline block" href="#" download>Download EP</a>
+            <a id="cvSide" class="btn-primary block" href="#" download>Download CV</a>
+            <a id="epSide" class="btn-outline block" href="#" download>Download EP</a>
           </div>
 
-          <div class="socials" style="margin-top:12px">
-            <a class="link" href="https://www.linkedin.com/in/mouad-matioui/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
-          </div>
+          <div class="socials" style="margin-top:12px"><a class="link" href="https://www.linkedin.com/in/mouad-matioui/" target="_blank" rel="noopener">LinkedIn</a><a class="link" href="#" target="_blank" rel="noopener">GitHub</a></div>
         </div>
 
-        <div class="card" style="margin-top:18px">
+        <div class="card">
           <h4>Languages</h4>
-          <p class="muted small">English (Fluent) • French (Fluent) • Arabic (Fluent)</p>
+          <p class="muted small">English • French • Arabic</p>
         </div>
       </aside>
     </main>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section contact-card" aria-labelledby="contact-title">
+    <section id="contact" class="section contact-card">
       <div class="contact-inner">
         <div>
-          <h2 id="contact-title">Contact</h2>
-          <p class="muted">Send a message or request further materials (papers, demos). The form below opens your email client and pre-fills the message.</p>
+          <h2>Contact</h2>
+          <p class="muted">Send a message or request materials. The form opens your default email client with a prefilled message.</p>
         </div>
 
-        <form id="contactFormLarge" class="contact-form-large" onsubmit="return handleContactLarge(event)" aria-label="Contact form">
+        <form id="contactFormLarge" class="contact-form-large" onsubmit="return handleContactLarge(event)">
           <div class="row">
-            <input id="cname" name="name" type="text" placeholder="Your full name" required>
-            <input id="cemail" name="email" type="email" placeholder="your@domain.com" required>
+            <input id="cname" name="name" type="text" placeholder="Your full name" required />
+            <input id="cemail" name="email" type="email" placeholder="your@domain.com" required />
           </div>
           <textarea id="cmessage" name="message" placeholder="Hi Mouad — I'm getting in touch about..." required></textarea>
           <div style="display:flex; gap:12px; align-items:center; margin-top:8px;">
@@ -303,116 +223,10 @@
       </div>
     </section>
 
-    <footer class="site-footer">
-      <div>© 2025 Mouad Matioui — Built for scholarship & research applications</div>
-    </footer>
+    <footer class="site-footer"><div>© 2025 Mouad Matioui — Prepared for scholarship & research selection</div></footer>
   </div>
 
-  <!-- SCRIPTS -->
-  <script>
-    /* ===========================
-       Theme handling
-       =========================== */
-    (function(){
-      const html = document.documentElement;
-      const btn = document.getElementById('themeToggle');
-      const saved = localStorage.getItem('mm_theme');
-      function setTheme(name){
-        if(name === 'light') html.classList.add('light');
-        else html.classList.remove('light');
-        localStorage.setItem('mm_theme', name);
-        btn.setAttribute('aria-pressed', name==='light');
-      }
-
-      if(saved) setTheme(saved);
-      else {
-        // default: dark
-        setTheme('dark');
-      }
-
-      btn.addEventListener('click', () => {
-        const active = html.classList.contains('light') ? 'light' : 'dark';
-        setTheme(active === 'light' ? 'dark' : 'light');
-      });
-    })();
-
-    /* ===========================
-       Scroll arrow -> navHeader
-       =========================== */
-    (function() {
-      const arrow = document.getElementById('scrollArrow');
-      const nav = document.getElementById('navHeader');
-      arrow.addEventListener('click', ()=> {
-        nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    })();
-
-    /* ===========================
-       Smooth scroll for anchors
-       =========================== */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if(href.length > 1){
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    /* ===========================
-       CV / EP download placeholders
-       Update paths before publishing:
-       CV_PATH and EP_PATH must be changed to your GitHub Pages file paths
-       =========================== */
-    (function(){
-      const CV_PATH = '/mouad_cv.pdf';  // <-- edit
-      const EP_PATH = '/mouad_ep.pdf';  // <-- edit
-      const ids = ['downloadCV-top','downloadCV-hero','btnCV','btnCV-side','downloadCV-hero','downloadCV-top','downloadCV-hero'];
-      // set known buttons if they exist
-      const map = {
-        'downloadCV-top': document.getElementById('downloadCV-top'),
-        'downloadCV-hero': document.getElementById('downloadCV-hero'),
-        'btnCV': document.getElementById('btnCV-side'),
-        'btnCV-side': document.getElementById('btnCV-side'),
-        'downloadEP-hero': document.getElementById('downloadEP-hero'),
-        'btnEP-side': document.getElementById('btnEP-side'),
-        'btnEP': document.getElementById('btnEP-side'),
-      };
-      // safely set if element present
-      if(map['downloadCV-top']) map['downloadCV-top'].href = CV_PATH;
-      if(map['downloadCV-hero']) map['downloadCV-hero'].href = CV_PATH;
-      if(map['btnCV-side']) map['btnCV-side'].href = CV_PATH;
-      if(document.getElementById('downloadEP-hero')) document.getElementById('downloadEP-hero').href = EP_PATH;
-      if(document.getElementById('btnEP-side')) document.getElementById('btnEP-side').href = EP_PATH;
-      if(document.getElementById('btnEP')) document.getElementById('btnEP').href = EP_PATH;
-    })();
-
-    /* ===========================
-       Contact form handlers
-       - open default mail client with prefilled content
-       =========================== */
-    function handleContactLarge(e){
-      e.preventDefault();
-      const name = encodeURIComponent(document.getElementById('cname').value.trim());
-      const email = encodeURIComponent(document.getElementById('cemail').value.trim());
-      const message = encodeURIComponent(document.getElementById('cmessage').value.trim());
-      const subject = encodeURIComponent(`Website contact from ${decodeURIComponent(name)}`);
-      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\n${decodeURIComponent(message)}`);
-      window.location.href = `mailto:matiouimouad9@gmail.com?subject=${subject}&body=${body}`;
-      return false;
-    }
-
-    /* Simple reveal on scroll (very lightweight) */
-    (function(){
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting) entry.target.classList.add('inview');
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.card, .project-card, .timeline-item, .card-sm').forEach(el => observer.observe(el));
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
