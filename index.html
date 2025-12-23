@@ -14,21 +14,25 @@
         <div class="nav-container">
             <div class="logo">MOUAD<span class="highlight">_</span>SEC</div>
             <ul class="nav-menu">
+                <li><a href="#home"><span class="highlight">00.</span> Home</a></li>
                 <li><a href="#about"><span class="highlight">01.</span> Profile</a></li>
                 <li><a href="#education"><span class="highlight">02.</span> Education</a></li>
                 <li><a href="#experience"><span class="highlight">03.</span> Trajectory</a></li>
-                <li><a href="#projects"><span class="highlight">04.</span> Cybersecurity Labs</a></li>
+                <li><a href="#projects"><span class="highlight">04.</span> Labs</a></li>
             </ul>
+            <div class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <p class="mono-text highlight fade-in">System Status: Online</p>
-                <p class="mono-text fade-in scholarship-note">
-                    <i class="fas fa-info-circle"></i> This website is created for the purpose of applying to the CyberSure Erasmus Mundus Scholarship
-                </p>
+                <div class="scholarship-banner">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>This website is created for the purpose of applying to the <strong>CyberSure Erasmus Mundus Scholarship</strong></p>
+                </div>
                 <h1 class="fade-in">Mouad Matioui.</h1>
                 <h2 class="sub-heading fade-in">Securing the Digital Frontier.</h2>
                 <p class="hero-desc fade-in">
@@ -44,11 +48,13 @@
                 <img src="./pic.jpg" alt="Mouad Matioui">
             </div>
         </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </header>
 
-    <main class="container">
-        
-        <section id="about" class="hidden-section">
+    <section id="about" class="hidden-section full-section">
+        <div class="container">
             <div class="section-header">
                 <span class="num">01.</span> <h3>Profile & Statistics</h3> <div class="line"></div>
             </div>
@@ -80,9 +86,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="education" class="hidden-section">
+    <section id="education" class="hidden-section full-section">
+        <div class="container">
             <div class="section-header">
                 <span class="num">02.</span> <h3>Education</h3> <div class="line"></div>
             </div>
@@ -96,7 +104,7 @@
                     </div>
                     <div class="job-right">
                         <h4>University of Hertfordshire</h4>
-                        <p style="color: var(--heading); margin-bottom: 10px;">Bachelor of Cybersecurity, First Class (3.72 CGPA)</p>
+                        <p class="job-subtitle">Bachelor of Cybersecurity, First Class (3.72 CGPA)</p>
                         <ul>
                             <li>Achieved First Class Honours with a <span class="highlight">3.72 CGPA</span></li>
                             <li>Specialized in network security, cryptography, and compliance frameworks</li>
@@ -112,7 +120,7 @@
                     </div>
                     <div class="job-right">
                         <h4>French Baccalaureate Diploma</h4>
-                        <p style="color: var(--heading); margin-bottom: 10px;">Math and Economics - 70%</p>
+                        <p class="job-subtitle">Math and Economics - 70%</p>
                         <ul>
                             <li>Focus on Mathematics and Economics with <span class="highlight">70% overall score</span></li>
                             <li>Strong foundation in analytical thinking and quantitative methods</li>
@@ -121,9 +129,11 @@
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience" class="hidden-section">
+    <section id="experience" class="hidden-section full-section">
+        <div class="container">
             <div class="section-header">
                 <span class="num">03.</span> <h3>The Trajectory</h3> <div class="line"></div>
             </div>
@@ -134,6 +144,8 @@
                     <div class="job-left">
                         <span class="range">Sep 2025 - Present</span>
                         <span class="company">Immunocore</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Oxfordshire, UK</span>
+                        <span class="mode"><i class="fas fa-briefcase"></i> Full-Time</span>
                     </div>
                     <div class="job-right">
                         <h4>AI Junior Solutions Analyst</h4>
@@ -148,6 +160,8 @@
                     <div class="job-left">
                         <span class="range">Sep 2024 - Sep 2025</span>
                         <span class="company">Immunocore</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Oxfordshire, UK</span>
+                        <span class="mode"><i class="fas fa-clock"></i> Placement</span>
                     </div>
                     <div class="job-right">
                         <h4>Technology Placement Student</h4>
@@ -163,6 +177,8 @@
                     <div class="job-left">
                         <span class="range">Sep 2023 - May 2024</span>
                         <span class="company">U. of Hertfordshire</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Hertfordshire, UK</span>
+                        <span class="mode"><i class="fas fa-user-graduate"></i> Part-Time</span>
                     </div>
                     <div class="job-right">
                         <h4>Teaching Assistant</h4>
@@ -174,9 +190,11 @@
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects" class="hidden-section">
+    <section id="projects" class="hidden-section full-section">
+        <div class="container">
             <div class="section-header">
                 <span class="num">04.</span> <h3>Cybersecurity Labs</h3> <div class="line"></div>
             </div>
@@ -221,12 +239,12 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Mouad Matioui. All rights reserved.</p>
+        <p><i class="fas fa-heart"></i> Thank you for taking the time to review my portfolio!</p>
+        <p class="footer-sub">Feel free to reach out at <a href="mailto:matiouimouad9@gmail.com" class="highlight">matiouimouad9@gmail.com</a></p>
     </footer>
 
     <script src="main.js"></script>
