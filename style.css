@@ -78,10 +78,9 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     display: flex; 
     align-items: center;
     position: relative;
-    background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('pic.jpg');
+    background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('./pic.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
 .hero h1 { font-size: 60px; color: var(--heading); line-height: 1.1; margin: 15px 0; }
 .hero .sub-heading { font-size: 40px; color: var(--text); margin-bottom: 20px; }
