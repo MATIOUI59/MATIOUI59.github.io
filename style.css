@@ -13,6 +13,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -181,7 +182,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 .hero-desc {
     max-width: 600px;
-    margin-bottom: 50px;
+    margin-bottom: 0;
     font-size: 1.15rem;
     line-height: 1.7;
 }
@@ -211,13 +212,18 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--highlight);
-    font-size: 24px;
+    font-size: 30px;
     animation: bounce 2s infinite;
     cursor: pointer;
+    opacity: 0.8;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
 }
 
 /* BUTTONS */
@@ -497,6 +503,24 @@ footer i {
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 968px) {
+    html {
+        scroll-snap-type: none;
+    }
+    
+    .full-section,
+    .hero {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+    
+    .navbar {
+        display: none;
+    }
+    
+    .hero {
+        padding: 60px 0 40px;
+    }
+    
     .nav-menu {
         display: none;
     }
