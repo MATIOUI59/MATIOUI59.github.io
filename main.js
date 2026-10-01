@@ -76,21 +76,27 @@ observedSections.forEach(section => {
     navObserver.observe(section);
 });
 
-// Navbar background change on scroll
-let lastScroll = 0;
+// Navbar background change on scroll (rAF-throttled, only touches style on
+// state change, so it never adds work to every scroll frame)
 const navbar = document.querySelector('.navbar');
+let navbarScrolled = false;
+let scrollTicking = false;
+
+function updateNavbarShadow() {
+    const shouldShow = window.pageYOffset > 100;
+    if (shouldShow !== navbarScrolled) {
+        navbarScrolled = shouldShow;
+        navbar.classList.toggle('navbar-scrolled', shouldShow);
+    }
+    scrollTicking = false;
+}
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 10px 30px -10px rgba(0,0,0,0.7)';
-    } else {
-        navbar.style.boxShadow = 'none';
+    if (!scrollTicking) {
+        requestAnimationFrame(updateNavbarShadow);
+        scrollTicking = true;
     }
-    
-    lastScroll = currentScroll;
-});
+}, { passive: true });
 
 // Add hover effect to project cards
 const projectCards = document.querySelectorAll('.project-card');

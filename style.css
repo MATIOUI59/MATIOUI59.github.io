@@ -13,7 +13,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -80,6 +79,12 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     background: rgba(10, 25, 47, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #233554;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar-scrolled {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
 }
 
 .nav-container {
@@ -620,16 +625,6 @@ footer i {
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 968px) {
-    html {
-        scroll-snap-type: none;
-    }
-    
-    .full-section,
-    .hero {
-        scroll-snap-align: none;
-        scroll-snap-stop: normal;
-    }
-    
     .hero {
         padding: 100px 0 60px;
     }
