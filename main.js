@@ -9,8 +9,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
         }
+        closeMobileMenu();
     });
 });
+
+// Mobile hamburger menu
+const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+const navMenu = document.querySelector('.nav-menu');
+
+function closeMobileMenu() {
+    if (!navMenu) return;
+    navMenu.classList.remove('mobile-open');
+    if (mobileMenuIcon) mobileMenuIcon.setAttribute('aria-expanded', 'false');
+}
+
+if (mobileMenuIcon && navMenu) {
+    mobileMenuIcon.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('mobile-open');
+        mobileMenuIcon.setAttribute('aria-expanded', String(isOpen));
+    });
+}
 
 // Intersection Observer for scroll animations
 const observerOptions = {
