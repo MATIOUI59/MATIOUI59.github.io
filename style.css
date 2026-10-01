@@ -412,6 +412,11 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     color: var(--highlight);
 }
 
+.job-right {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
 .job-right h4 {
     color: var(--heading);
     font-size: 1.3rem;
@@ -435,6 +440,26 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     content: "▹";
     color: var(--highlight);
     margin-right: 8px;
+}
+
+.cert-thumb-link {
+    display: inline-block;
+    margin-top: 14px;
+}
+
+.cert-thumb {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #233554;
+    transition: 0.3s;
+}
+
+.cert-thumb-link:hover .cert-thumb {
+    border-color: var(--highlight);
+    transform: translateY(-2px);
 }
 
 /* PROJECTS */
